@@ -4,8 +4,8 @@ require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
   mapping = cmp.mapping.preset.insert({
-      ['<Tab>'] = cmp.mapping.select_next_item(),
-      ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+      ['<S-j>'] = cmp.mapping.select_next_item(),
+      ['<S-k>'] = cmp.mapping.select_prev_item(),
       ['<C-k>'] = cmp.mapping.scroll_docs(-4),
       ['<C-j>'] = cmp.mapping.scroll_docs(4),
       ['<C-o>'] = cmp.mapping.complete(),
