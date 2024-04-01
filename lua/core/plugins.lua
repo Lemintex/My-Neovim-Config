@@ -10,7 +10,6 @@ local ensure_packer = function()
 end
 
 local packer_bootstrap = ensure_packer()
-print("Plugins")
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'ellisonleao/gruvbox.nvim'
@@ -55,15 +54,6 @@ return require('packer').startup(function(use)
   }
   use {
     "folke/which-key.nvim",
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
   }
   use {
     "NeogitOrg/neogit",
@@ -73,6 +63,20 @@ return require('packer').startup(function(use)
       "nvim-telescope/telescope.nvim"
     },
     config = true
+  }
+  use {
+    "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  }
+  use {
+    "akinsho/toggleterm.nvim",
+    tag = '*',
+    config = function()
+      require("toggleterm").setup()
+    end
   }
   -- My plugins here
   -- use 'foo1/bar1.nvim'

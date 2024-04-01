@@ -32,5 +32,8 @@ wk.register({
   },
   s = {
     name = "Search",
-  },
+  }
 }, { prefix = "<leader>" })
+
+vim.o.timeout = true
+vim.o.timeoutlen = 10 -- TODO find better solution

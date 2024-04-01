@@ -25,3 +25,5 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true })
 -- Code format
 vim.api.nvim_set_keymap('n', '<leader>cf', '<cmd>lua vim.lsp.buf.format(nil, 1000)<CR>',
   { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('t', '<C-\\>', '<C-\\><C-n>', { noremap = true })
