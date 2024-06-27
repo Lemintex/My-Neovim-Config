@@ -45,18 +45,18 @@ map('n', '<A-l>', ':bnext<CR>', { noremap = true })
 map('n', '<A-h>', ':bprevious<CR>', { noremap = true })
 
 -- Telescope
-map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep test" })
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
-map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help page" })
-map("n", "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
-map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find oldfiles" })
+map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "live grep test" })
+map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "find buffers" })
+map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "help page" })
+map("n", "<leader>fm", "<cmd>Telescope marks<CR>", { desc = "find marks" })
+map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "find oldfiles" })
 map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>",
-  { desc = "telescope find in current buffer" })
+  { desc = "find in current buffer" })
 
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "find files" })
 map(
   "n",
   "<leader>fa",
   "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
-  { desc = "telescope find all files" }
+  { desc = "find all files" }
 )

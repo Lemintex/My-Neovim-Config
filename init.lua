@@ -1,5 +1,7 @@
 require("core.keymaps")
 require("core.plugins")
 require("core.plugin_config")
---END OF GUIDE
+
+vim.cmd("set number")
+vim.cmd("set relativenumber")
 vim.cmd("NvimTreeOpen")

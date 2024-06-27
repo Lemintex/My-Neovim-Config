@@ -20,6 +20,31 @@ require("lspconfig").lua_ls.setup {
 require("lspconfig").clangd.setup {
   on_attach = on_attach
 }
+
+require("lspconfig").tsserver.setup {
+  on_attach = on_attach
+}
+
+require("lspconfig").tailwindcss.setup {
+  on_attach = on_attach
+}
+
+require("lspconfig").gopls.setup {
+  on_attach = on_attach,
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      staticcheck = true,
+      analyses = {
+        unusedparams = true,
+        shadow = true,
+      },
+    },
+  },
+}
+
 vim.api.nvim_create_autocmd("BufWritePre", {
   buffer = buffer,
   callback = function()
