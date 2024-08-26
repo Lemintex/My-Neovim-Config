@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "clangd", "tsserver", "tailwindcss", "gopls" },
+  ensure_installed = { "lua_ls", "clangd", "tsserver", "tailwindcss", "gopls", "eslint" },
 })
 
 local on_attach = function(_, _)
@@ -26,6 +26,10 @@ require("lspconfig").tsserver.setup {
 }
 
 require("lspconfig").tailwindcss.setup {
+  on_attach = on_attach
+}
+
+require("lspconfig").eslint.setup {
   on_attach = on_attach
 }
 

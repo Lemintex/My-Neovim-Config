@@ -16,7 +16,20 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
-  use 'nvim-treesitter/nvim-treesitter'
+  use { 'nvim-treesitter/nvim-treesitter',
+    opts = function()
+      local opts = {
+        ensure_installed = {
+          "lua",
+          "typescript",
+          "javascript",
+          "html",
+          "tsx",
+        },
+      }
+      return opts
+    end
+  }
 
   -- autocomplete
   use 'hrsh7th/nvim-cmp'
@@ -78,6 +91,31 @@ return require('packer').startup(function(use)
       require("toggleterm").setup()
     end
   }
+  use {
+    "windwp/nvim-ts-autotag",
+    ft = { "html", "javascript", "typescript", "javascriptreact", "typescriptreact", "svelte", "vue" },
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end
+  }
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+    opts = function()
+      local opts = {
+        ensure_installed = {
+          "lua",
+          "typescript",
+          "javascript",
+          "html",
+          "tsx",
+        },
+      }
+      return opts
+    end
+  }
+
+
   -- My plugins here
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
