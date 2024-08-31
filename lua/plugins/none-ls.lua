@@ -12,9 +12,10 @@ return {
 				null_ls.builtins.formatting.prettier,
 			},
 		})
+		local wk = require("which-key")
 
-		local bind = vim.keymap.set
-
-		bind("n", "<leader>cf", vim.lsp.buf.format, {})
+		wk.add({
+			{ "<leader>cf", vim.lsp.buf.format, desc = "Code format" },
+		})
 	end,
 }

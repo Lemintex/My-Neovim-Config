@@ -1,3 +1,7 @@
+local lsps = {
+	"lua_ls",
+	"gopls",
+}
 return {
 	{
 		"williamboman/mason.nvim",
@@ -31,14 +35,18 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-			local bind = vim.keymap.set
+			for _, lsp in ipairs(lsps) do
+				lspconfig[lsp].setup({
+					capabilities = capabilities,
+				})
+			end
+			local wk = require("which-key")
 
-			bind("n", "K", vim.lsp.buf.hover, {})
-			bind("n", "gd", vim.lsp.buf.definition, {})
-			bind({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+			wk.add({
+				{ "K", vim.lsp.buf.hover },
+				{ "gd", vim.lsp.buf.definition, desc = "Goto definition" },
+				{ "<leader>ca", vim.lsp.buf.code_action, desc = "Code action" },
+			})
 		end,
 	},
 }

@@ -7,8 +7,12 @@ return {
 			local bind = vim.keymap.set
 
 			local builtin = require("telescope.builtin")
-			bind("n", "<leader>ff", builtin.find_files, {})
-			bind("n", "<leader>fg", builtin.live_grep, {})
+			local wk = require("which-key")
+
+			wk.add({
+				{ "<leader>ff", builtin.find_fies, desc = "Find files" },
+				{ "<leader>fg", builtin.live_grep, desc = "Grep files" },
+			})
 		end,
 	},
 	{

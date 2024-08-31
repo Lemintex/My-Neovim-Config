@@ -8,7 +8,10 @@ return {
 		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	config = function()
-		local bind = vim.keymap.set
-		bind("n", "<C-n>", ":Neotree filesystem reveal left<CR>")
+		local wk = require("which-key")
+
+		wk.add({
+			{ "<C-n>", ":Neotree filesystem reveal left<CR>" },
+		})
 	end,
 }

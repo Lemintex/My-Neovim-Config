@@ -7,7 +7,8 @@ return {
       auto_install = true,
       ensure_installed = {
         "lua",
-        "markdown"
+        "markdown",
+        "go",
       },
       highlight = { enable = true },
       indent = { enable = true }
